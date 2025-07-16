@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --bg-color: #0d0d12;
+  --accent-color: #d5d900;
+  --text-color: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.08); /* slight bump in contrast */
+  --border-glow: #d9a600;
+  --blur: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0d0d12, #12121a); /* more depth */
+  color: var(--text-color);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+.particles-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 255, 204, 0.08), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(255, 0, 204, 0.08), transparent 60%);
+  z-index: 0;
+}
+
+.joke-container {
+  z-index: 2;
+  background: var(--card-bg);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px var(--border-glow);
+  width: 100%;
+  max-width: 550px;
+  text-align: center;
+  backdrop-filter: blur(var(--blur));
+  border: 1px solid var(--border-glow);
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+h1.glow {
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+  color: var(--accent-color);
+  text-shadow: 0 0 12px var(--accent-color);
+}
+
+#get-joke {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 14px 30px;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #000;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+  box-shadow: 0 0 12px var(--accent-color);
+}
+
+#get-joke:hover {
+  background-color: #f4c93b;
+  transform: scale(1.05);
+  box-shadow: 0 0 18px var(--accent-color);
+}
+
+#joke-display {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  animation: slideIn 0.5s ease-in;
+  transition: all 0.3s ease-in-out;
+  color: #ddd;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.reaction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.reaction:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+.reaction i {
+  font-size: 22px;
+}
+
+.reaction small {
+  font-size: 0.8rem;
+  margin-top: 4px;
+  color: #aaa;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  h1.glow {
+    font-size: 1.7rem;
+  }
+
+  #joke-display {
+    font-size: 0.95rem;
+  }
+
+  #get-joke {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .reaction i {
+    font-size: 20px;
+  }
+
+  .reaction small {
+    font-size: 0.7rem;
+  }
+}

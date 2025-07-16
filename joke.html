@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jokes Generator</title>
+  <link rel="stylesheet" href="css/joke.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+  <!-- Background animation container -->
+  <div class="particles-bg"></div>
+
+  <div class="joke-container">
+    <h1 class="glow">Joke Bot 🤖</h1>
+    <button id="get-joke"><i class="fa fa-random"></i> Get Joke</button>
+    
+    <div id="joke-display"></div>
+   <div class="icons">
+  <div class="reaction" id="like-btn">
+    <i class="fa fa-thumbs-up"></i>
+    <small>Like</small>
+  </div>
+
+  <div class="reaction" id="meh-btn">
+    <i class="fa fa-meh-o"></i>
+    <small>Meh</small>
+  </div>
+
+  <div class="reaction" id="share-btn">
+    <i class="fa fa-share-alt"></i>
+    <small>Share</small>
+  </div>
+ </div>
+
+  </div>
+
+  <script src="js/joke.js"></script>
+   <script src="js/server.js"></script>
+</body>
+</html>
